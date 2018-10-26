@@ -37,7 +37,7 @@ def train(training_pandas_data, test_pandas_data, label_col,
     testFeatures = test_pandas_data[feat_cols].values
 
     #We will use a linear Elastic Net model.
-    en = SGDRegressor(alpha=alpha, l1_ratio=l1_ratio)
+    en = SGDRegressor(alpha=alpha, l1_ratio=l1_ratio, warm_start=True, max_iter=1000)
 
     # Here we train the model.
     en.fit(trainingFeatures, trainingLabels)
