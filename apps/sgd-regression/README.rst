@@ -18,6 +18,6 @@ To run the app with default parameters while in the root directory, run the comm
 
 ::
 
-   mlflow run apps/sgb-regression -P train="insert/data/path/" -P test="insert/data/path/" -P label-col="insert.label.col"
+   mlflow run apps/sgd-regression -P train="insert/data/path/" -P test="insert/data/path/" -P label-col="insert.label.col"
 
 .. _SGD: http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDRegressor.html
