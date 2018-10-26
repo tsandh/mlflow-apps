@@ -32,12 +32,12 @@ parser.add_argument("l1_ratio", help="L1 ratio for SGD regressor. "
     "See http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDRegressor.html "
     "for more details.",
                     type=float)
-parser.add_argument("max_iter", help="Maximum number of passes over the training data.",
-                    type=int)
-parser.add_argument("tol", help="The stopping criterion.",
-                    type=float)
 parser.add_argument("label_col", help="Name of label column.",
                     type=str)
+parser.add_argument("--max_iter", help="Maximum number of passes over the training data.",
+                    type=int)
+parser.add_argument("--tol", help="The stopping criterion.",
+                    type=float)
 parser.add_argument("--feat-cols", help="List of feature column names. "
                         "Input must be a single string with columns delimited by commas.",
                     type=lambda s: [str(i) for i in s.split(',')])
