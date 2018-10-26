@@ -105,6 +105,14 @@ This app creates and fits an `Elastic Net`_ model based on
 parquet-formatted input data. See more info
 `here <apps/linear-regression/>`__.
 
+sgd-regression
+~~~~~~~~~~~~~~~~~
+
+This app creates and fits an `SGD`_ model based on
+parquet-formatted input data. See more info
+`here <apps/sgd-regression/>`__.
+
+
 Contributing
 ------------
 
@@ -121,3 +129,4 @@ If you would like to contribute to this library, please see the
 .. _here: apps/dnn-regression/
 .. _Elastic Net: http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html
 .. _contribution guide: CONTRIBUTING.rst
+.. _SGD: http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDRegressor.html

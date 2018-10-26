@@ -13,18 +13,20 @@
 # limitations under the License.
 
 from sklearn.metrics import mean_squared_error
-from sklearn.linear_model import ElasticNet
+from sklearn.linear_model import SGDRegressor
 import mlflow
 from mlflow import sklearn
 
 
 def train(training_pandas_data, test_pandas_data, label_col, 
-          feat_cols, alpha, l1_ratio, training_data_path, test_data_path):
+          feat_cols, alpha, l1_ratio, max_iter, tol, training_data_path, test_data_path):
 
     print("train:         " + training_data_path)
     print("test:          " + test_data_path)
     print("alpha:        ", alpha)
     print("l1-ratio:     ", l1_ratio)
+    print("max_iter:     ", max_iter)
+    print("tol:     ", tol)
     print("label-col:     " + label_col)
     for col in feat_cols:
         print("feat-cols:     " + col)
@@ -36,8 +38,8 @@ def train(training_pandas_data, test_pandas_data, label_col,
     testLabels = test_pandas_data[label_col].values
     testFeatures = test_pandas_data[feat_cols].values
 
-    #We will use a linear Elastic Net model.
-    en = ElasticNet(alpha=alpha, l1_ratio=l1_ratio)
+    #We will use an SGD model.
+    en = SGDRegressor(alpha=alpha, l1_ratio=l1_ratio, warm_start=True, max_iter=max_iter, tol=tol)
 
     # Here we train the model.
     en.fit(trainingFeatures, trainingLabels)
